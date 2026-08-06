@@ -85,18 +85,22 @@ un solo resumen clínico en Determination y Submit, sin duplicados.
 
 ## TT-326 — Order summary page navigation for submitted orders
 
-**Estado:** Bloqueado
+**Estado:** Listo para QA, pendiente activar feature flag
 
 **Qué pedía:** verificar navegación a la página de resumen para
 órdenes ya enviadas (submitted).
 
-**Bloqueo:** no se encontraron órdenes con status "Submitted" en
-las organizaciones de prueba revisadas (QA Smoke Test Org,
-Pharmerica, Tanner Test). Marcin tiene fixes locales relacionados
-sin desplegar aún.
+**Bloqueo original:** no se encontraron órdenes con status
+"Submitted" en las organizaciones de prueba revisadas (QA Smoke
+Test Org, Pharmerica, Tanner Test). Marcin tenía fixes locales
+relacionados sin desplegar aún.
 
-**Próximo paso:** retomar cuando Marcin despliegue sus fixes
-locales.
+**[ACTUALIZADO — confirmado en daily standup, 06 ago 2026]:** el
+bloqueo se resolvió (fixes de Marcin desplegados). Ticket pasa a
+"Listo para QA", pendiente activar feature flag antes de poder
+ejecutar la validación.
+
+**Próximo paso:** validar en cuanto se active el feature flag.
 
 ---
 
