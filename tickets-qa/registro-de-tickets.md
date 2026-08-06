@@ -95,12 +95,23 @@ un solo resumen clínico en Determination y Submit, sin duplicados.
 Test Org, Pharmerica, Tanner Test). Marcin tenía fixes locales
 relacionados sin desplegar aún.
 
-**[ACTUALIZADO — confirmado en daily standup, 06 ago 2026]:** el
-bloqueo se resolvió (fixes de Marcin desplegados). Ticket pasa a
-"Listo para QA", pendiente activar feature flag antes de poder
-ejecutar la validación.
+**[ACTUALIZADO — confirmado en daily standup, 06 ago 2026]:** Kevin
+confirmó que el bloqueo se resolvió (fixes de Marcin desplegados).
+El desarrollo está listo para QA — falta activar el feature flag
+"orders_ui_v2" (segunda versión del layout de orden) en el ambiente
+donde se pruebe (dev o producción).
 
-**Próximo paso:** validar en cuanto se active el feature flag.
+**Alcance de la prueba (aclarado por el equipo):** solo debo probar
+lo que ya coincide con el Figma actual, no trabajo adicional que se
+vaya a agregar después.
+
+**Bloqueante técnico actual:** no encontré dónde se activa el flag
+"orders_ui_v2" en el Backoffice (revisado: Edit org, System
+Settings > Platform Settings completo, User Management). Escalado
+a Marcin por Slack, respuesta pendiente.
+
+**Próximo paso:** esperar respuesta de Marcin sobre dónde activar
+el flag, luego validar.
 
 ---
 
