@@ -22,6 +22,16 @@ distintos.
   SÍ generan trazas ahí. Si se necesita ver el trace de una orden
   en Langfuse dev, crear la orden de prueba en un ambiente Dev, no
   en producción.
+- **Importante (confirmado 11 ago 2026, TT-326):** el ambiente Dev
+  (QA Smoke Test Org, y aparentemente otras orgs de prueba en dev)
+  no tiene cargada la misma librería de guidelines que producción.
+  Al crear órdenes de prueba ahí con códigos CPT/ICD-10 que sí
+  funcionan en producción (ej. CPT 73721 + M25.561), el Clinical
+  Review falla con "No clinical guideline found with the provided
+  data" y la orden queda en estado error, sin llegar a completarse.
+  Para pruebas que necesiten una orden realmente
+  completada/submitted, usar Medpoint test org en producción en vez
+  de orgs de prueba en dev.
 
 ---
 

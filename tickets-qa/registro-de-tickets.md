@@ -85,7 +85,8 @@ un solo resumen clínico en Determination y Submit, sin duplicados.
 
 ## TT-326 — Order summary page navigation for submitted orders
 
-**Estado:** Listo para QA, pendiente activar feature flag
+**Estado:** Ready for Release (reasignado a Marcin para fase de
+release)
 
 **Qué pedía:** verificar navegación a la página de resumen para
 órdenes ya enviadas (submitted).
@@ -105,13 +106,30 @@ donde se pruebe (dev o producción).
 lo que ya coincide con el Figma actual, no trabajo adicional que se
 vaya a agregar después.
 
-**Bloqueante técnico actual:** no encontré dónde se activa el flag
-"orders_ui_v2" en el Backoffice (revisado: Edit org, System
-Settings > Platform Settings completo, User Management). Escalado
-a Marcin por Slack, respuesta pendiente.
+**[ACTUALIZADO — 11 ago 2026]:** se activó el flag "orders_ui_v2"
+primero en dev, pero las órdenes de prueba ahí fallaban el Clinical
+Review por falta de guidelines cargados en ese ambiente (no
+relacionado al ticket — ver nuevo aprendizaje en
+reglas-y-aprendizajes-de-testing.md). Marcin confirmó que el flag
+también funciona en producción y que el matching de guidelines está
+fuera de alcance de este ticket.
 
-**Próximo paso:** esperar respuesta de Marcin sobre dónde activar
-el flag, luego validar.
+**Validación completada en Medpoint test org (producción):**
+- AC1: orden ya completada/submitted (Test TT303) → aterrizó directo
+  en la página de resumen completo, sin paso intermedio.
+- AC2: orden en progreso (Cory Runge, draft Step 2/4) → aterrizó
+  exactamente en ese paso al usar "Resume Order".
+
+Ambos ACs confirmados con evidencia (3 capturas) en comentario de
+Jira.
+
+**Pendiente aparte (no bloquea este ticket):** ajuste visual fino
+contra Figma (iconos en badges CPT, ubicación de Download Section,
+control chevron, etc.), ya identificado por Marcin.
+
+**Cierre:** Ready for Release. Reasignado a Marcin (ingeniero
+original) según protocolo del equipo confirmado en daily de hoy:
+tickets ready-for-release se asignan al ingeniero original.
 
 ---
 
@@ -132,7 +150,7 @@ sobreescribe — hay que forzar un nuevo run para ver la corrección.
 ## TT-303 — Chronological ordering of newly added cases in queue
 
 **Link:** https://ethermed.atlassian.net/browse/TT-303
-**Estado:** En progreso — comentario con hallazgos publicado
+**Estado:** Ready for Release
 
 **Qué pedía:** que al agregar un caso nuevo a la cola de anotación
 humana (Human Annotation queue), aparezca al final ordenado
@@ -169,6 +187,15 @@ orden.
 **Evidencia:** 4 capturas (Column Visibility, trace de hoy, trace
 de ayer, cola final) subidas al comentario del ticket.
 
-**Próximo paso:** esperar respuesta del equipo sobre la implicación
-de este hallazgo, y sobre la pregunta pendiente de Marcin (reviews
-fallidos en la cola).
+**[ACTUALIZADO — daily standup, 06 ago 2026]:** Marcin confirmó que
+ordenar por "momento de inserción a la cola" (no por createdAt real)
+es el comportamiento INTENCIONAL, tal como él entendió la tarea
+originalmente. Su razonamiento: ordenar por createdAt real podría
+mezclar trazas ya anotadas con no anotadas si se agregan trazas
+viejas después de que la cola ya tiene trazas más nuevas anotadas.
+Pendiente llevar esto a conversación con Taru para confirmar si se
+mantiene así o se ajusta.
+
+**Cierre — 11 ago 2026:** Taru confirmó por Slack que el
+comportamiento coincide con lo que ella tenía en mente. Ticket
+cerrado sin cambios adicionales. Estado: Ready for Release.
