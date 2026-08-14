@@ -199,3 +199,40 @@ mantiene así o se ajusta.
 **Cierre — 11 ago 2026:** Taru confirmó por Slack que el
 comportamiento coincide con lo que ella tenía en mente. Ticket
 cerrado sin cambios adicionales. Estado: Ready for Release.
+
+---
+
+## TT-345 — Failed Determinations for CR Cases
+
+**Link:** https://ethermed.atlassian.net/browse/TT-345
+**Estado:** In Review - Testing (comentario con evidencia publicado)
+
+**Qué pedía:** investigar por qué órdenes que antes generaban
+determinación clínica dejaron de hacerlo. Afecta a MPM, Careflow y
+otros clientes. Alta prioridad (Uzo), ligado a evaluación final con
+Tanner Health System.
+
+**Hallazgo:** el síntoma agrupaba 3 causas raíz distintas:
+
+1. SNF Admission (Hayden Righter, Medpoint test org) - ya corregido
+   por ingeniería antes de retomar el ticket. Verificado: genera
+   determinación completa.
+2. Christopher Still (Tanner Health System Prod, CPT 52310, Anthem
+   GA Commercial) - "No clinical guideline found". Confirmado en
+   Backoffice de producción (sección Guidelines, filtro CPT 52310):
+   no existe ningún guideline para ese código. No es bug de
+   matching, es gap de librería.
+3. CareFlow Prod / integración Availity - al menos 7 órdenes en 2
+   meses fallan con "Service review not found" tras generar
+   determinación exitosa. Verificado en 2 casos (Woodrow Roberts -
+   Humana, Stefano Tarantolo - Aetna): mismo patrón con payers
+   distintos, ambos SNF Admission. Sugiere problema en cómo CareFlow
+   Prod envía las solicitudes SNF Admission a Availity, no
+   específico de un payer.
+
+**Evidencia:** comentario publicado en Jira con 8 capturas
+documentando los 3 casos.
+
+**Cierre:** caso 1 resuelto. Casos 2 y 3 quedan documentados,
+pendientes de decisión de ingeniería/producto (no corresponde a QA
+resolverlos).
