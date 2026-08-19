@@ -91,3 +91,22 @@ texto. Si alguien ofrece una sesión conjunta ("we can go through
 that together"), responder confirmando que se puede resolver por
 cuenta propia, para no comprometer tiempo de alguien con agenda
 ocupada.
+
+---
+
+## Documentar candidatos a automatización antes de desarrollar
+
+(Confirmada en Bi-Weekly QA Sync, 18 ago 2026, y reforzada en
+Sprint Planning, 19 ago 2026.)
+
+Antes de empezar a desarrollar cualquier automatización, se debe
+documentar la oportunidad en Confluence Y crear un ticket formal de
+Jira. No se empieza desarrollo sin que ambos existan.
+
+Contexto: surgió al identificar como candidato de automatización la
+verificación de si existe un guideline para un CPT code dado en el
+backoffice (relacionado a TT-345). Dom Garbellano se comprometió a
+documentar esto en Confluence y crear el ticket correspondiente.
+
+Meta del equipo: alcanzar 25% de cobertura de automatización para
+fin de año.

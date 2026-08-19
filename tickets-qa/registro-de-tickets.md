@@ -205,7 +205,7 @@ cerrado sin cambios adicionales. Estado: Ready for Release.
 ## TT-345 — Failed Determinations for CR Cases
 
 **Link:** https://ethermed.atlassian.net/browse/TT-345
-**Estado:** In Review - Testing (comentario con evidencia publicado)
+**Estado:** In Progress (reasignado a Van Damrongsri)
 
 **Qué pedía:** investigar por qué órdenes que antes generaban
 determinación clínica dejaron de hacerlo. Afecta a MPM, Careflow y
@@ -233,6 +233,61 @@ Tanner Health System.
 **Evidencia:** comentario publicado en Jira con 8 capturas
 documentando los 3 casos.
 
+**[ACTUALIZADO — 18 ago 2026]:** Taru Jain confirmó por escrito
+(comentario Jira) que los casos 2 y 3 son issues separados que se
+están resolviendo en tickets aparte (TT-349, TT-350). El scope de
+TT-345 queda acotado a "failed determination view".
+
+**[ACTUALIZADO — Sprint Planning, 19 ago 2026]:** Van pidió
+formalmente dividir TT-345 en tickets separados por no estar
+relacionados al bug original; Dominick aprobó. Taru quedó encargada
+de etiquetar/crear los tickets correspondientes a los 2 hallazgos.
+Sprint actualizado por Dom Garbellano: de Apollo 34/35/36 pasa a
+Apollo 34/35/36/37 (sigue activo, extendido).
+
 **Cierre:** caso 1 resuelto. Casos 2 y 3 quedan documentados,
 pendientes de decisión de ingeniería/producto (no corresponde a QA
-resolverlos).
+resolverlos) — actualmente en proceso de dividirse en TT-349 y
+TT-350.
+
+---
+
+## TT-351 — Capture right answer from the annotator in AI Workbench
+
+**Estado:** Finalizada (confirmado por Dom Garbellano, 18 ago 2026,
+cambio de estado Ready for Release → Finalizada)
+
+**Qué pedía:** verificar 2 Acceptance Criteria del flujo de
+anotación en AI Workbench:
+- AC1: si la respuesta del LLM se marca correcta, la UI no debe
+  cambiar (no deben aparecer campos extra).
+- AC2: si se marca incorrecta, debe aparecer la sección "Corrected
+  Answer" con las opciones correctas (True/Unknown/False) y un
+  campo de razonamiento.
+
+**Cómo se probó:** se probaron ambos criterios con múltiples
+preguntas en el flujo de anotación. AC1 probado con respuesta
+AI-proposed "Unknown" y también "Yes", mismo resultado correcto en
+ambos casos. AC2 probado marcando una pregunta como incorrecta,
+confirmando que aparece el formulario de corrección esperado, y
+probado también en otra sección/pregunta distinta con el mismo
+comportamiento consistente.
+
+**Caso edge probado:** cambiar una respuesta de incorrecta a
+correcta limpia el formulario de "Corrected Answer" sin dejar
+rastros/estado residual.
+
+**Limitación encontrada:** se intentó probar en un segundo caso de
+las colas de anotación para verificar consistencia, pero varios
+traces no se pudieron anotar ("This trace can't be annotated") o
+ya estaban bloqueados/completados sin campos editables. Dado que
+los resultados fueron consistentes en todas las preguntas que sí
+se pudieron probar, se cerró la validación con ese alcance.
+
+**Nota de documentación (no bug):** la descripción original del
+ticket decía que las opciones eran "Yes/No/Unknown", pero la
+implementación real usa "True/Unknown/False" (coincide con una
+captura de Kevin en los comentarios). Se sugiere actualizar la
+descripción del ticket para mayor claridad.
+
+**Evidencia:** 6 capturas publicadas en el comentario de Jira.
