@@ -235,8 +235,10 @@ documentando los 3 casos.
 
 **[ACTUALIZADO — 18 ago 2026]:** Taru Jain confirmó por escrito
 (comentario Jira) que los casos 2 y 3 son issues separados que se
-están resolviendo en tickets aparte (TT-349, TT-350). El scope de
-TT-345 queda acotado a "failed determination view".
+están resolviendo en tickets aparte. Taru no mencionó números de
+ticket específicos, solo indicó genéricamente "being solved in
+separate tickets". El scope de TT-345 queda acotado a "failed
+determination view".
 
 **[ACTUALIZADO — Sprint Planning, 19 ago 2026]:** Van pidió
 formalmente dividir TT-345 en tickets separados por no estar
@@ -245,10 +247,19 @@ de etiquetar/crear los tickets correspondientes a los 2 hallazgos.
 Sprint actualizado por Dom Garbellano: de Apollo 34/35/36 pasa a
 Apollo 34/35/36/37 (sigue activo, extendido).
 
-**Cierre:** caso 1 resuelto. Casos 2 y 3 quedan documentados,
-pendientes de decisión de ingeniería/producto (no corresponde a QA
-resolverlos) — actualmente en proceso de dividirse en TT-349 y
-TT-350.
+**[CORRECCIÓN — 03 sep 2026]:** se investigó a fondo (Slack con
+Taru, comentario real de Jira en TT-345, descripciones de TT-349 y
+TT-350, búsqueda en todo Jira por la frase exacta "Service review
+not found") y se confirmó que TT-349 (member_id overwrite) y TT-350
+(nursing home status) son bugs completamente distintos, sin
+relación con el caso 2 (library gap CPT 52310) ni con el caso 3
+(Availity "Service review not found"). La referencia previa a
+TT-349/TT-350 en esta ficha era incorrecta.
+
+**Cierre:** caso 1 resuelto. Caso 2 cerrado como TT-430 (Jim Koger
+confirmó que no hay gap de librería). Caso 3 cerrado como TT-431,
+citando que se resuelve externamente con Availity (según lo
+mencionado por Dom), sin vincular ningún ticket de Jira adicional.
 
 ---
 
