@@ -256,10 +256,17 @@ relación con el caso 2 (library gap CPT 52310) ni con el caso 3
 (Availity "Service review not found"). La referencia previa a
 TT-349/TT-350 en esta ficha era incorrecta.
 
-**Cierre:** caso 1 resuelto. Caso 2 cerrado como TT-430 (Jim Koger
-confirmó que no hay gap de librería). Caso 3 cerrado como TT-431,
-citando que se resuelve externamente con Availity (según lo
-mencionado por Dom), sin vincular ningún ticket de Jira adicional.
+**Cierre:** caso 1 resuelto. Caso 2 cerrado como TT-430, estado
+"Won't Do" (Jim Koger confirmó que no hay gap de librería). Caso 3
+cerrado como TT-431, estado "Won't Do", citando que se resuelve
+externamente con Availity (según lo mencionado por Dom), sin
+vincular ningún ticket de Jira adicional.
+
+**Nota — TT-345 (ticket padre):** el scope quedó acotado a "failed
+determination view" (Caso 1, ya resuelto), pero el ticket sigue
+**In Progress**, reasignado a Van Damrongsri. Pendiente confirmación
+de Dom Garbellano (pregunta enviada, sin respuesta aún) antes de
+poder mover el estado del ticket.
 
 ---
 
