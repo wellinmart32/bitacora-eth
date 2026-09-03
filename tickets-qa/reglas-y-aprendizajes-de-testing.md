@@ -105,8 +105,14 @@ Jira. No se empieza desarrollo sin que ambos existan.
 
 Contexto: surgió al identificar como candidato de automatización la
 verificación de si existe un guideline para un CPT code dado en el
-backoffice (relacionado a TT-345). Dom Garbellano se comprometió a
-documentar esto en Confluence y crear el ticket correspondiente.
+backoffice (relacionado a TT-345). La documentación en Confluence
+se completó (página confirmada existente). La creación del ticket
+de Jira correspondía a Alexander Martinez (no a Dom Garbellano, como
+se registró incorrectamente antes) — así consta en "Próximos pasos"
+del resumen oficial de la standup del 24 de agosto de 2026.
+
+**[CORRECCIÓN — 01 sep 2026]:** el ticket se creó como TT-434, con
+cierto retraso respecto al 24 de agosto.
 
 Meta del equipo: alcanzar 25% de cobertura de automatización para
 fin de año.
