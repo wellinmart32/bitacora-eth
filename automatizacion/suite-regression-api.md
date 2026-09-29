@@ -66,3 +66,24 @@ marcando cada escenario original como CUBIERTO, DUPLICADO,
 DESCARTADO o PENDIENTE, y la sección V1 Scope se actualizó de "14
 tests, 2 pendientes de confirmar" a "27 tests, 25 passing, 2 known
 gap".
+
+## Detalles técnicos para retomar la suite
+
+- Enfoque: tests externos con Req contra el API desplegado en Dev
+  (no ConnCase/in-process), para ejercitar auth/config/infra reales.
+- Ubicación: apps/ethermed_web/test/external_regression/
+  (orders_regression_test.exs, documents_regression_test.exs,
+  clinical_reviews_regression_test.exs).
+- Helpers en EthermedWeb.ExternalRegressionCase:
+  create_regression_order!, get_json!, post_json_with_token!,
+  upload_document!, upload_document_with_token!, valid_document_path,
+  assert_status! (muestra status esperado, real y body al fallar),
+  assert_eventually (polling para comportamiento asíncrono).
+- Tag: @moduletag :external_regression, async: false.
+- Cómo correr:
+  mix test <ruta_del_archivo> --only external_regression
+- Submit siempre responde 200 de inmediato; los errores aparecen
+  después en el procesamiento. Los tests de clinical reviews usan
+  assert_eventually (30s timeout, 1s intervalo).
+- DOC-06 (archivo >25MB) devolvió 400 y 413 en corridas distintas;
+  probablemente un proxy intercepta a veces. El test acepta ambos.
