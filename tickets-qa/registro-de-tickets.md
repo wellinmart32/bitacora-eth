@@ -391,27 +391,3 @@ automatización con Oscar ("may have you pivot away and work with
 Oscar on automations"), coincidiendo con este bloqueo sin resolver.
 Estado final de TT-357 sin confirmar — pendiente de verificar si
 sigue activo o quedó de lado por el pivote.
-
----
-
-## TT-359 — Some orders have pre-cert list selected as a guideline rather than an actual guideline
-
-**Estado:** Done (Van Damrongsri lo cerró directamente, se saltó el
-paso de Ready for Release — decisión del desarrollador, no
-revertida)
-
-**Qué pedía:** verificar que el fix de Van (que borró 112
-guidelines de pre-cert, dejó 4 en Draft, y re-corrió 18 órdenes
-afectadas) haya funcionado correctamente.
-
-**Cómo se probó:** 3 métodos independientes.
-1. Confirmación visual en AI Workbench: 3 ejemplos mostraban
-   guidelines reales de Aetna (CPB 0660 y CPB 0287) en vez de la
-   lista de pre-cert.
-2. Cross-check en Backoffice Guidelines: confirmado que CPB 0660 y
-   CPB 0287 existen como guidelines reales, sourced de policybot.
-3. Confirmación individual de que las 4 guidelines de pre-cert list
-   quedaron en Status: Draft.
-
-**Evidencia:** comentario Jira con 9 capturas, terminando en "No
-issues found. Moving this to Ready for Release."
