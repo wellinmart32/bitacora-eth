@@ -120,16 +120,6 @@ anotación.
 
 ---
 
-## Capturas de pantalla para evidencia (regla de Ronny)
-
-En capturas grandes o con mucho texto donde cueste ubicar la zona
-relevante a simple vista, marcarla con un rectángulo en el editor
-de la Herramienta de Recorte (Snipping Tool) antes de usarla en un
-comentario de Jira. Capturas pequeñas o simples no necesitan esta
-anotación.
-
----
-
 ## Escalar preguntas técnicas
 
 Igual que con Ben/Uzo en validación de payers, evitar preguntar
