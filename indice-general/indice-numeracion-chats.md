@@ -13,7 +13,7 @@ reunión ya es única por su fecha — esas NO necesitan contador).
 
 - Validación Excel [Payer] → último número usado: 0
 - Automatización (guideline_verification_tool) → último número
-  usado: 0
+  usado: 1
 - (agregar categorías nuevas aquí conforme aparezcan)
 
 ## Categorías sin contador (usan su propio identificador)

@@ -45,7 +45,11 @@ comportamiento ESPERADO, no bug por defecto. Este bug aplica
 NO relacionados con el header (ej. familia completa de códigos de
 conjuntivitis en contexto oncológico).
 Estado: fila 94.1 (Upper GI Endoscopy) pendiente de re-evaluación
-individual código por código bajo el criterio actualizado.
+individual código por código bajo el criterio actualizado. Según
+el chat original donde se confirmó el cambio de criterio con Ben,
+las filas afectadas por este mismo cambio son 94.1, 94.2, 94.13,
+98.4.1, 98.4.2, y probablemente todos los bloques 94.x y 98.4.x —
+pendientes de re-evaluación bajo el criterio actualizado.
 
 ## 7. Anthem Georgia / Carelon (Torticollis, fila 98.11): omisión
 de inferencia ICD-10

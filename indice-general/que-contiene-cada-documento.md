@@ -46,6 +46,14 @@ Garbellano. Contiene:
 - `pendientes.md` — tareas bloqueadas o por definir dentro de este
   trabajo
 
+### herramienta-verificacion/
+Todo lo relacionado al proyecto personal `guideline_verification_tool`
+(repo separado: alex95mf/guideline_verification_tool), la herramienta
+de automatización en Python para agilizar la validación de
+guidelines. Contiene:
+- `estado-del-proyecto.md` — arquitectura, estado de los 6 módulos,
+  tickets Jira asociados, y hallazgos técnicos
+
 ### (Futuras carpetas)
 Cuando aparezca una actividad laboral nueva y distinta a las de
 arriba, se crea una carpeta nueva en este mismo repositorio y se

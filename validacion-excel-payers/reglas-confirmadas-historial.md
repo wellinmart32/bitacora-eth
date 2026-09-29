@@ -54,6 +54,16 @@ Sobre fuentes nuevas: Ben no tiene lista maestra. Su indicación:
 "I do not have that list. I would say ask Kevin as you pick up new
 guideline sources." → escalar a Kevin, no a Ben.
 
+**[CONFLICTO ABIERTO — detectado 29 sep 2026]** El ticket TT-293
+("Extractor Deep QA - Anthem Georgia", reportado por Uzoma Abakporo,
+sin asignar, columna To Do) pide en su User Story 1 / Acceptance
+Criteria 1 exactamente lo contrario a esta regla: que el campo de
+ICD-10 quede vacío y se elimine la lógica de inferencia clínica
+cuando el documento diga "Refer to the ICD-10 CM manual". Si TT-293
+se implementa tal como está redactado, revertiría este
+comportamiento esperado confirmado por Ben. Pendiente de escalar
+esta contradicción antes de que se desarrolle el ticket.
+
 ---
 
 ## Regla de versión del documento

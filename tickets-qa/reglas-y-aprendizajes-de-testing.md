@@ -71,6 +71,33 @@ pruebas de múltiples guidelines): CPT 73721 + ICD-10 M25.561.
 
 ---
 
+## Cuentas de prueba con rol distinto (customer)
+
+Existe una cuenta de prueba tipo customer
+(a.martinez+customer@ethermed.ai), rol member, en QA Smoke Test Org
+(Dev). Útil para probar comportamiento visible según rol de usuario.
+La contraseña no se guarda en este repositorio.
+
+- El Activity Timeline se oculta para cuentas no admin (no aparece
+  en la vista de la orden).
+- Las cuentas customer muestran "No Determination Available" en una
+  orden aunque la determinación exista internamente — es una
+  limitación de visibilidad por rol, no ausencia real de datos.
+
+---
+
+## Confiabilidad del Sprint Board
+
+El Sprint Board de Jira puede mostrar un estado de columna que no
+coincide con el estado real del ticket. Antes de asumir el estado
+de un ticket por su posición visual en el board, abrir el ticket
+por su URL directa para confirmar el estado real.
+Ejemplo: TT-291 a TT-294 aparecían visualmente en "In Review -
+Testing" en el board, pero al abrir cada uno individualmente su
+estado real era "To Do".
+
+---
+
 ## Verificar mecanismos no documentados
 
 Cuando un ticket depende de un mecanismo interno que no es visible
@@ -80,6 +107,26 @@ resultados. Ejemplo: para TT-303 se probó agregando un trace viejo
 después de uno nuevo, para verificar si el orden de la cola
 depende de createdAt real o de orden de inserción — reveló que es
 lo segundo.
+
+---
+
+## Capturas de pantalla para evidencia (regla de Ronny)
+
+En capturas grandes o con mucho texto donde cueste ubicar la zona
+relevante a simple vista, marcarla con un rectángulo en el editor
+de la Herramienta de Recorte (Snipping Tool) antes de usarla en un
+comentario de Jira. Capturas pequeñas o simples no necesitan esta
+anotación.
+
+---
+
+## Capturas de pantalla para evidencia (regla de Ronny)
+
+En capturas grandes o con mucho texto donde cueste ubicar la zona
+relevante a simple vista, marcarla con un rectángulo en el editor
+de la Herramienta de Recorte (Snipping Tool) antes de usarla en un
+comentario de Jira. Capturas pequeñas o simples no necesitan esta
+anotación.
 
 ---
 

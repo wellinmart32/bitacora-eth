@@ -13,3 +13,9 @@ cambios de nombre.
 - Se reemplaza el enfoque anterior de un solo documento con
   múltiples pestañas mezclando actividades, por un repositorio con
   una carpeta separada por tipo de actividad laboral.
+
+## 29 de septiembre de 2026
+
+- Creación de la carpeta herramienta-verificacion/ para respaldar
+  el proyecto personal guideline_verification_tool (arquitectura,
+  estado de módulos, tickets Jira, hallazgos técnicos).
