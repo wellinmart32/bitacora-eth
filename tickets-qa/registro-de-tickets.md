@@ -309,3 +309,109 @@ captura de Kevin en los comentarios). Se sugiere actualizar la
 descripción del ticket para mayor claridad.
 
 **Evidencia:** 6 capturas publicadas en el comentario de Jira.
+
+---
+
+## TT-191 — Was the Ethermed Answer Acceptable? (QA Feedback question)
+
+**Estado:** En curso (reasignado a Marcin Talik)
+
+**Qué pedía:** agregar pregunta Yes/No "Was the Ethermed Answer
+Acceptable?" en la sección Quality Assurance Feedback de la página
+de Clinical Review Determination.
+
+**Cómo se probó:** orden de prueba en QA Smoke Test Org con CPT
+73721 + ICD-10 M25.561.
+
+**Hallazgo:** 2 bugs.
+1. La rama "No" mostraba las preguntas legacy de TT-172 en vez de
+   los checkboxes de rejection reason del mockup nuevo.
+2. La selección Yes/No no persistía visualmente al navegar fuera y
+   volver.
+
+**Verificación:** bug 1 confirmado revisando PR #617 en GitHub — la
+propia descripción de Marcin Talik decía que la intención era
+revelar "detailed feedback categories" al elegir "No". Verificado
+en Langfuse que el score feedback_determination_ok sí se guarda
+correctamente en backend (bug 2 es visual, no de pérdida de datos).
+
+**Evidencia:** gdoc en ETHERMED.AI/Tickets/TT-191/Resumen.gdoc con
+las 3 pestañas, comentario HTML con 5 capturas publicado en Jira.
+
+---
+
+## TT-359 — Some orders have pre-cert list selected as a guideline rather than an actual guideline
+
+**Estado:** Done (Van Damrongsri lo cerró directamente, se saltó el
+paso de Ready for Release — decisión del desarrollador, no
+revertida)
+
+**Qué pedía:** verificar que el fix de Van (que borró 112
+guidelines de pre-cert, dejó 4 en Draft, y re-corrió 18 órdenes
+afectadas) haya funcionado correctamente.
+
+**Cómo se probó:** 3 métodos independientes.
+1. Confirmación visual en AI Workbench: 3 ejemplos mostraban
+   guidelines reales de Aetna (CPB 0660 y CPB 0287) en vez de la
+   lista de pre-cert.
+2. Cross-check en Backoffice Guidelines: confirmado que CPB 0660 y
+   CPB 0287 existen como guidelines reales, sourced de policybot.
+3. Confirmación individual de que las 4 guidelines de pre-cert list
+   quedaron en Status: Draft.
+
+**Evidencia:** comentario Jira con 9 capturas, terminando en "No
+issues found. Moving this to Ready for Release."
+
+---
+
+## TT-357 — Feature flag "orders_ui_v2" actor-based blocker
+
+**Estado:** Bloqueado desde el 04 sep 2026, sin resolver — estado
+final sin confirmar (ver nota de pivote abajo)
+
+**Qué pedía:** validación bloqueada porque el botón "Order Details"
+no aparece, aun con el feature flag "orders_ui_v2" habilitado
+globalmente en Dev y para Medpoint org en producción. Causa: el
+flag es actor-based (se evalúa por usuario individual, no por
+organización), y se necesitaba confirmar el user ID de
+a.martinez@ethermed.ai para poder agregarlo como actor.
+
+**Intentos para encontrar el user ID (los 3 fallaron):**
+1. My Profile — bloqueado por 2FA.
+2. Audit Logs — UUID aparecía truncado.
+3. Network tab — sin resultado por encriptación de sesión de
+   Phoenix (LiveView sobre WebSocket).
+
+**Escalamiento:** Ronny autorizó escalar directamente a Dom
+Garbellano. Hecho por Slack el 02 sep 2026, sin respuesta
+confirmada después de esa fecha.
+
+**[ACTUALIZADO — 10 sep 2026]:** Dom pidió pivotar el trabajo hacia
+automatización con Oscar ("may have you pivot away and work with
+Oscar on automations"), coincidiendo con este bloqueo sin resolver.
+Estado final de TT-357 sin confirmar — pendiente de verificar si
+sigue activo o quedó de lado por el pivote.
+
+---
+
+## TT-359 — Some orders have pre-cert list selected as a guideline rather than an actual guideline
+
+**Estado:** Done (Van Damrongsri lo cerró directamente, se saltó el
+paso de Ready for Release — decisión del desarrollador, no
+revertida)
+
+**Qué pedía:** verificar que el fix de Van (que borró 112
+guidelines de pre-cert, dejó 4 en Draft, y re-corrió 18 órdenes
+afectadas) haya funcionado correctamente.
+
+**Cómo se probó:** 3 métodos independientes.
+1. Confirmación visual en AI Workbench: 3 ejemplos mostraban
+   guidelines reales de Aetna (CPB 0660 y CPB 0287) en vez de la
+   lista de pre-cert.
+2. Cross-check en Backoffice Guidelines: confirmado que CPB 0660 y
+   CPB 0287 existen como guidelines reales, sourced de policybot.
+3. Confirmación individual de que las 4 guidelines de pre-cert list
+   quedaron en Status: Draft.
+
+**Evidencia:** comentario Jira con 9 capturas, terminando en "No
+issues found. Moving this to Ready for Release."

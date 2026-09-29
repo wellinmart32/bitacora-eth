@@ -35,7 +35,18 @@ funcionalidades del sistema Ethermed (no filas del Excel). Contiene:
 - `reglas-y-aprendizajes-de-testing.md` — aprendizajes generales de
   este tipo de testing, reutilizables entre tickets
 
+### automatizacion/
+Todo lo relacionado al trabajo de automatización de pruebas junto a
+Oscar (equipo Hopper), surgido de un pivote pedido por Dom
+Garbellano. Contiene:
+- `ambiente-local.md` — configuración del ambiente local (WSL,
+  herramientas, repositorio, variables de entorno)
+- `suite-regression-api.md` — historial y hallazgos técnicos de la
+  suite de regression testing de API
+- `pendientes.md` — tareas bloqueadas o por definir dentro de este
+  trabajo
+
 ### (Futuras carpetas)
-Cuando aparezca una actividad laboral nueva y distinta a las dos de
+Cuando aparezca una actividad laboral nueva y distinta a las de
 arriba, se crea una carpeta nueva en este mismo repositorio y se
 agrega su entrada aquí.
